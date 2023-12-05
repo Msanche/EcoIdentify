@@ -1,4 +1,4 @@
-const ClaseModel = require('../models/usuarios');
+const ClaseModel = require('../models/clase');
 
 class ClaseController {
     static async indexGet(req, res) {

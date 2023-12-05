@@ -1,14 +1,14 @@
 const {connectMysql} = require('../dbconnection');
-class usuariosModel {
+class ClaseModel {
     static async consultar() {
         let db = await connectMysql();
-        let query = db('Usuario');
+        let query = db('Clase');
         return await query;
     }
     static async consultarPorId(id) {
         let db = await connectMysql();
-        return await db('Usuario').where('id', id);
+        return await db('Clase').where('id', id);
     }
 }
 
-module.exports = usuariosModel;
+module.exports = ClaseModel;

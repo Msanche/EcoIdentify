@@ -11,6 +11,10 @@ app.get('/', function (req, res) {
     res.send('¡Prueba 123456789012!');
 });
 
+//Usuarios
+app.get('/usuarios', UsuariosController.indexGet);
+app.get('/usuarios/:id([0-9]+)', UsuariosController.itemGet);
+//Clase
 app.get('/usuarios', UsuariosController.indexGet);
 app.get('/usuarios/:id([0-9]+)', UsuariosController.itemGet);
 
