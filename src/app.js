@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const puerto = 80;
 const UsuariosController = require('./controllers/UsuariosController');
+const ClaseController = require('./controllers/ClaseController');
+const ComentarioController = require('./controllers/ComentarioController');
 
 app.use(express.json());
 
@@ -11,12 +13,33 @@ app.get('/', function (req, res) {
     res.send('¡Prueba 123456789012!');
 });
 
-//Usuarios
+//Usuario
 app.get('/usuarios', UsuariosController.indexGet);
 app.get('/usuarios/:id([0-9]+)', UsuariosController.itemGet);
 //Clase
-app.get('/usuarios', UsuariosController.indexGet);
-app.get('/usuarios/:id([0-9]+)', UsuariosController.itemGet);
+app.get('/Clase', ClaseController.indexGet);
+app.get('/Clase/:id([0-9]+)', ClaseController.itemGet);
+//Comentario
+app.get('/comentario', ComentarioController.indexGet);
+app.get('/comentario/:id([0-9]+)', ComentarioController.itemGet);
+//Dominio
+
+//Especie
+
+//Familia
+
+//Fotos
+
+//Genero
+
+//Orden
+
+//Phyla
+
+//Publicaciones
+
+//Reinos
+
 
 app.listen(puerto, function() {
     console.log("Servidor en espera http://localhost");
