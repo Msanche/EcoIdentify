@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const puerto = 80;
-const TemasController = require('./controllers/TemasController');
+const UsuariosController = require('./controllers/UsuariosController');
 
 app.use(express.json());
 
@@ -11,8 +11,8 @@ app.get('/', function (req, res) {
     res.send('¡Prueba 123456789012!');
 });
 
-app.get('/temas', TemasController.indexGet);
-app.get('/temas/:id([0-9]+)', TemasController.itemGet);
+app.get('/usuarios', UsuariosController.indexGet);
+app.get('/usuarios/:id([0-9]+)', UsuariosController.itemGet);
 
 app.listen(puerto, function() {
     console.log("Servidor en espera http://localhost");
