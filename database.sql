@@ -89,7 +89,7 @@ CREATE TABLE Usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255) UNIQUE NOT NULL,
     fecha_nacimiento DATE NOT NULL,
-    contraseña TEXT NOT NULL,
+    contrasena TEXT NOT NULL,
     correo VARCHAR(255) NOT NULL
 );
 
@@ -110,13 +110,20 @@ CREATE TABLE Publicaciones (
     id INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(100) NOT NULL,
     contenido VARCHAR(255) NOT NULL,
-    id_comentario INT,
     id_usuario INT NOT NULL,
     id_imagen INT,
-    FOREIGN KEY (id_comentario) REFERENCES Comentario(id),
     FOREIGN KEY (id_usuario) REFERENCES Usuario(id),
     FOREIGN KEY (id_imagen) REFERENCES Fotos(id)
 );
+
+CREATE TABLE DetalleComentarioPublicacion (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_comentario INT NOT NULL,
+    id_publicacion INT NOT NULL,
+    FOREIGN KEY (id_comentario) REFERENCES Comentario(id),
+    FOREIGN KEY (id_publicacion) REFERENCES Publicaciones(id)
+);
+
 
 
 CREATE TABLE Especie (

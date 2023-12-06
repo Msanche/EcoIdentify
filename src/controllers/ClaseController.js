@@ -14,6 +14,8 @@ class ClaseController {
         }
         res.send(data[0]);
     }
+
+    
 }
 
 module.exports = ClaseController;

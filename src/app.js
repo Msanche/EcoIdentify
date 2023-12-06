@@ -25,12 +25,15 @@ app.get('/', function (req, res) {
 //Usuario
 app.get('/usuarios', UsuariosController.indexGet);
 app.get('/usuarios/:id([0-9]+)', UsuariosController.itemGet);
+app.post('/usuarios', UsuariosController.indexPost);
 //Clase
 app.get('/Clase', ClaseController.indexGet);
 app.get('/Clase/:id([0-9]+)', ClaseController.itemGet);
 //Comentario
 app.get('/comentario', ComentarioController.indexGet);
 app.get('/comentario/:id([0-9]+)', ComentarioController.itemGet);
+app.post('/comentario', ComentarioController.indexPost);
+
 //Dominio
 app.get('/dominio', DominioController.indexGet);
 app.get('/dominio/:id([0-9]+)', DominioController.itemGet);
@@ -43,6 +46,8 @@ app.get('/Familia/:id([0-9]+)', FamiliaController.itemGet);
 //Fotos
 app.get('/Fotos', FotosController.indexGet);
 app.get('/Fotos/:id([0-9]+)', FotosController.itemGet);
+app.post('/Fotos', PublicacionesController.indexPost);
+
 //Genero
 app.get('/Genero', GeneroController.indexGet);
 app.get('/Genero/:id([0-9]+)', GeneroController.itemGet);
@@ -55,6 +60,9 @@ app.get('/Phyla/:id([0-9]+)', PhylaController.itemGet);
 //Publicaciones
 app.get('/Publicaciones', PublicacionesController.indexGet);
 app.get('/Publicaciones/:id([0-9]+)', PublicacionesController.itemGet);
+app.get('/Publicaciones/:id([0-9]+)/coms', PublicacionesController.itemGet);
+app.post('/Publicaciones', PublicacionesController.indexPost);
+
 //Reinos
 app.get('/Reinos', ReinosController.indexGet);
 app.get('/Reinos/:id([0-9]+)', ReinosController.itemGet);
