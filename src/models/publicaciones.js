@@ -10,37 +10,6 @@ class PublicacionesModel {
         return await db('Publicaciones').where('id', id);
     }
 
-    static async consultarPublicacionConComentarios(idPublicacion) {
-        try {
-            let db = await connectMysql();
-    
-            const publicacion = await db('Publicaciones')
-                .select('*')
-                .where('id', idPublicacion)
-                .first(); // Tomar solo el primer resultado
-    
-            if (!publicacion) {
-                // Manejar el caso en que la publicación no exista
-                return null;
-            }
-    
-            // Consultar los comentarios relacionados con la publicación
-            const comentarios = await db('Comentario')
-                .select('Comentario.*')
-                .innerJoin('DetalleComentarioPublicacion', 'Comentario.id', '=', 'DetalleComentarioPublicacion.id_comentario')
-                .where('DetalleComentarioPublicacion.id_publicacion', idPublicacion);
-    
-            // Agregar la propiedad 'comentarios' a la publicación
-            publicacion.comentarios = comentarios;
-    
-            return publicacion;
-        } catch (error) {
-            console.error("Error al consultar publicación con comentarios:", error);
-            throw error;
-        }
-    }
-    
-    
 
     static async insertar(datos) {
         try {

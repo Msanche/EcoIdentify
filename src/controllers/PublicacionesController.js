@@ -15,16 +15,6 @@ class PublicacionesController {
         res.send(data[0]);
     }
     
-    static async indexGet(req, res) {
-        let id = req.params.id;
-        let data = await PublicacionesModel.consultarPublicacionConComentarios(id);
-        if (data.length == 0) {
-            res.status(404).send({errno: 404, error: 'Not found'});
-            return;
-        }
-        res.send(data[0]);
-        
-    }
 
     static async indexPost(req, res) {
         try {

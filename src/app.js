@@ -60,7 +60,6 @@ app.get('/Phyla/:id([0-9]+)', PhylaController.itemGet);
 //Publicaciones
 app.get('/Publicaciones', PublicacionesController.indexGet);
 app.get('/Publicaciones/:id([0-9]+)', PublicacionesController.itemGet);
-app.get('/Publicaciones/:id([0-9]+)/coms', PublicacionesController.itemGet);
 app.post('/Publicaciones', PublicacionesController.indexPost);
 
 //Reinos
