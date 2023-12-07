@@ -1,7 +1,6 @@
 # API RESTful con Node.js
 
-Proyecto de demostración para clases de desarrollo de APIs utilizando Node.js,
-con implementación en contenedores de Docker.
+Proyecto para uso de la aplicación Eco Identify haciendo uso de una API,con implementación en contenedores de Docker.
 
 ## Tabla de contenido
 
@@ -23,7 +22,7 @@ Asegúrate de tener instalado y configurado Docker antes de comenzar.
 1. Clonar el repositorio en la máquina local:
    
    ```sh
-   git clone https://github.com/francerz/node-restful.git
+   git clone https://github.com/Msanche/EcoIdentify.git
    ```
 
 2. Navegar al directorio del proyecto:

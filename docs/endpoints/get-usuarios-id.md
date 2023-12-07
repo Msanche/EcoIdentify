@@ -1,21 +1,24 @@
-# Endpoint: `GET /temas/{id}`
+# Endpoint: `GET /usuarios/{id}`
 
-Permite obtener información detallada sobre un tema específico mediante su identificador único.
+Permite obtener información detallada sobre un usuario específico mediante su identificador único.
 
 ## Parámetros de URL
-- `{id}` (obligatorio): Identificador único del tema que se desea recuperar.
+- `{id}` (obligatorio): Identificador único del usuario que se desea recuperar.
 
 ## Ejemplo de Solicitud
 ```http
-GET /temas/123
+GET /usuario/123
 ```
 
 ## Respuesta Exitosa (Código 200 OK)
 ```json
 {
-  "id_tema": 123,
-  "nombre": "Programación",
-}
+        "id": 1,
+        "nombre": "JuanPerez",
+        "fecha_nacimiento": "1990-05-15",
+        "contrasena": "clave123",
+        "correo": "juan.perez@example.com"
+    }
 ```
 
 ## Respuestas de Errores Posibles
@@ -25,7 +28,7 @@ GET /temas/123
   {
     "errno": 404,
     "error": "not_found",
-    "error_description": "No se encontró el tema."
+    "error_description": "No se encontró el usuario."
   }
   ```
 
@@ -41,6 +44,4 @@ GET /temas/123
 ## Notas Adicionales
 
 - Asegurate de incluir un ID válido en la solicitud para obtener la información
-  sobre un tema en específico.
-- Para consultar más detalle sobre los libros relacionados con el tema consultar
-  la documentación del endpoint [`/temas/{id}/libros`](./get-temas-id-libros.md).
+  sobre un usuario en específico.

@@ -46,7 +46,7 @@ app.get('/Familia/:id([0-9]+)', FamiliaController.itemGet);
 //Fotos
 app.get('/Fotos', FotosController.indexGet);
 app.get('/Fotos/:id([0-9]+)', FotosController.itemGet);
-app.post('/Fotos', PublicacionesController.indexPost);
+app.post('/Fotos', FotosController.indexPost);
 
 //Genero
 app.get('/Genero', GeneroController.indexGet);
