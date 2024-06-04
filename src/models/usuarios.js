@@ -12,16 +12,15 @@ class usuariosModel {
 
     static async insertar(datos) {
         try {
-            const { nombre, fechaNacimiento, contrasena, correo } = datos;
+            const { nombre, contrasena, correo } = datos;
             
             if (!contrasena) {
-                throw new Error(`La contraseña es un campo obligatorio. Datos recibidos: nombre=${nombre}, fechaNacimiento=${fechaNacimiento}, correo=${correo}`);
+                throw new Error(`La contraseña es un campo obligatorio. Datos recibidos: nombre=${nombre}, correo=${correo}`);
             }  
     
             let db = await connectMysql();
             const result = await db('Usuario').insert({
                 nombre,
-                fecha_nacimiento: fechaNacimiento,
                 contrasena,
                 correo,
             }).returning('id');  // Cambia 'Registro completado' por 'id'

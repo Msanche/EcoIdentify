@@ -18,12 +18,11 @@ class UsuariosController {
     static async indexPost(req, res) {
         try {
             // Obtener datos del cuerpo de la solicitud
-            const { nombre, fechaNacimiento, contrasena, correo } = req.body;
+            const { nombre, contrasena, correo } = req.body;
     
             // Crear un objeto con los datos necesarios
             const newData = {
                 nombre,
-                fechaNacimiento,
                 contrasena,
                 correo
             };
